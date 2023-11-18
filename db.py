@@ -2,10 +2,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
-from galaxies import Galaxie
-from solar_systems import Solar_System
-from planets import Planet
-from details import Detail
+
 
 Base = declarative_base()
 

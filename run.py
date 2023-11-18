@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planets

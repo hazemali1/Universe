@@ -14,11 +14,11 @@ class Detail(Base):
 	def __init__(self, details, **kwargs):
 		self.details = details
 		for k, v in kwargs.items():
-			if k == details_Galaxies_id:
+			if k == "details_Galaxies_id":
 				self.details_Galaxies_id = v
 		for k, v in kwargs.items():
-			if k == details_Solar_Systems_id:
+			if k == "details_Solar_Systems_id":
 				self.details_Solar_Systems_id = v
 		for k, v in kwargs.items():
-			if k == details_Planets_id:
+			if k == "details_Planets_id":
 				self.details_Planets_id = v

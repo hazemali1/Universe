@@ -1,7 +1,7 @@
-from UNIVERSE.galaxies import Galaxie
-from UNIVERSE.solar_systems import Solar_System
-from UNIVERSE.planets import Planets
-from UNIVERSE.db import session
+from galaxies import Galaxie
+from solar_systems import Solar_System
+from planets import Planets
+from db import session
 
 
 

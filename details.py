@@ -6,6 +6,7 @@ from db import Base
 class Detail(Base):
 	__tablename__ = "Details"
 	details = Column(String(4069), nullable=False)
+	id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
 	details_Galaxies_id = Column(Integer, ForeignKey("Galaxies.id"))
 	details_Solar_Systems_id = Column(Integer, ForeignKey("Solar_Systems.id"))
 	details_Planets_id = Column(Integer, ForeignKey("Planets.id"))

@@ -5,6 +5,9 @@ from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planet
 from details import Detail
+from db import Base
+
+
 
 engine = create_engine("mysql+mysqldb://root:root@localhost/db_test")
 Base.metadata.create_all(bind=engine)

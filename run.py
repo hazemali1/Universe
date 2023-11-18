@@ -2,6 +2,7 @@
 from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planet
+from details import Detail
 from db import session
 
 
@@ -18,14 +19,14 @@ obj3 = Planets("Planets1", solar_system_id=obj2.id)
 session.add(obj3)
 session.commit()
 
-obj4 = Details("Details", details_for_id=obj1.id)
+obj4 = Details("Details", details_Galaxies_id=obj1.id)
 session.add(obj4)
 session.commit()
 
-obj5 = Details("Details", details_for_id=obj2.id)
+obj5 = Details("Details", details_Solar_Systems_id=obj2.id)
 session.add(obj5)
 session.commit()
 
-obj6 = Details("Details", details_for_id=obj3.id)
+obj6 = Details("Details", details_Planets_id=obj3.id)
 session.add(obj6)
 session.commit()

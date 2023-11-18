@@ -9,7 +9,7 @@ class Solar_System(Base):
 	name = Column(String(128), nullable=False)
 	galaxie_id = Column(Integer, ForeignKey("Galaxies.id"), nullable=False)
 	planets = relationship("Planets")
-	details = relationship("Details")
+	details = relationship("Detail")
 
 	def __init__(self, name, galaxie_id):
 		self.name = name

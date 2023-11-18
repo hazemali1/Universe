@@ -7,9 +7,9 @@ class Solar_System(Base):
 	__tablename__ = "Solar_Systems"
 	id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
 	name = Column(String(128), nullable=False)
-	galaxie_id = Column(Integer, ForeignKey("galaxies_id"), nullable=False)
-	planets = relationship("Planets", backref="solar_systems")
-	details = relationship("Details", backref="solar_systems")
+	galaxie_id = Column(Integer, ForeignKey("galaxies.id"), nullable=False)
+	planets = relationship("Planets")
+	details = relationship("Details")
 
 	def __init__(self, name, galaxie_id):
 		self.name = name

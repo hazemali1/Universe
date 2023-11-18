@@ -15,18 +15,18 @@ obj2 = Solar_System("Solar_System1", galaxie_id=obj1.id)
 session.add(obj2)
 session.commit()
 
-obj3 = Planets("Planets1", solar_system_id=obj2.id)
+obj3 = Planet("Planets1", solar_system_id=obj2.id)
 session.add(obj3)
 session.commit()
 
-obj4 = Details("Details", details_Galaxies_id=obj1.id)
+obj4 = Detail("Details for galaxy", details_Galaxies_id=obj1.id)
 session.add(obj4)
 session.commit()
 
-obj5 = Details("Details", details_Solar_Systems_id=obj2.id)
+obj5 = Detail("Details for solar system", details_Solar_Systems_id=obj2.id)
 session.add(obj5)
 session.commit()
 
-obj6 = Details("Details", details_Planets_id=obj3.id)
+obj6 = Detail("Details for planet", details_Planets_id=obj3.id)
 session.add(obj6)
 session.commit()

@@ -139,6 +139,7 @@ def count(name=None):
 		print("number of {} => {}".format(name, counter))
 
 def delete(name=None):
+	object_to_delete = None
 	element = input("enter name of {} you wanna remove: ".format(name))
 	if name == "galaxy":
 		element_id = get_galaxy_id(element)

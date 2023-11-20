@@ -25,7 +25,7 @@ def new(create=None):
 		if name:
 			galaxy = Galaxie(name)
 			save(galaxy)
-			details = input("enter the file path of details: ")
+			details = input("enter the file path of galaxy details: ")
 			with open(details, encoding='utf8') as f:
 				reader = f.read()
 			Details = Detail(reader, details_Galaxies_id=galaxy.id)
@@ -50,7 +50,7 @@ def new(create=None):
 					print("please enter (y/n)")
 			solar_system = Solar_System(name, galaxie_id=galaxy_id)
 			save(solar_system)
-			details = input("enter the file path of details: ")
+			details = input("enter the file path of solar system details: ")
 			with open(details, encoding='utf8') as f:
 				reader = f.read()
 			Details = Detail(reader, details_Solar_Systems_id=solar_system.id)
@@ -68,14 +68,14 @@ def new(create=None):
 				answer = input()
 				if answer == "y":
 					new("solar_system")
-					solar_system_id = get_solar_system_id(name_of_solar_system)
+					solar_system_id = get_Solar_System_id(name_of_solar_system)
 				elif answer == "n":
 					return
 				else:
 					print("please enter (y/n)")
 			planet = Planet(name, solar_system_id=solar_system_id)
 			save(planet)
-			details = input("enter the file path of details: ")
+			details = input("enter the file path of planet details: ")
 			with open(details, encoding='utf8') as f:
 				reader = f.read()
 			Details = Detail(reader, details_Planets_id=planet.id)

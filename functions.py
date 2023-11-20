@@ -136,4 +136,5 @@ def count(name=None):
 	for keys, value in All.items():
 		for v in value:
 			counter += 1
-	print(counter)
+	if counter:
+		print("number of {} => {}".format(name, counter))

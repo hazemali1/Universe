@@ -5,14 +5,10 @@ from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planet
 from details import Detail
-from db import Base
 
 
 
-engine = create_engine("mysql+mysqldb://root:root@localhost/db_test")
-Base.metadata.create_all(bind=engine)
-Session = sessionmaker(bind=engine)
-db = Session()
+
 
 in_put = ""
 comands = {
@@ -23,5 +19,5 @@ comands = {
 }
 
 while (in_put != "Exit"):
-	in_put = input(comands)
+	in_put = input(comands + '\n')
 	print(in_put)

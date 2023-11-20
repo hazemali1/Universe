@@ -159,7 +159,8 @@ def delete(name=None):
 	else:
 		print("syntax error!!")
 	if Planets_to_delete:
-		db.delete(Planets_to_delete)
+		for ele in Planets_to_delete:
+			db.delete(ele)
 	if object_to_delete and Detail_to_delete:
 		db.delete(object_to_delete)
 		db.delete(Detail_to_delete)

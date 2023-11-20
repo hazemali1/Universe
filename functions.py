@@ -30,4 +30,7 @@ def new(create=None):
 				reader = f.read()
 			Details = Detail(reader, details_Galaxies_id=galaxy.id)
 			save(Details)
-			print("done")
+			print("Done!")
+
+def all():
+	All = db.query().all()

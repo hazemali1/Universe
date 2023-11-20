@@ -4,6 +4,7 @@ from solar_systems import Solar_System
 from planets import Planet
 from details import Detail
 from functions import new
+from functions import all
 
 
 
@@ -14,6 +15,7 @@ comands = {
 	"for new galaxy": "new galaxy",
 	"for new solar system": "new solar_system",
 	"for new planet": "new planet",
+	"for display Universe": "all",
 	"if tyou wanna exit": "Exit"
 }
 
@@ -23,3 +25,5 @@ while (in_put != "Exit"):
 	if list_split:
 		if list_split[0] == "new":
 			new(list_split[1])
+		elif list_split[0] == "all":
+			all()

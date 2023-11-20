@@ -16,7 +16,8 @@ comands = {
 	"for new solar system": "new solar_system",
 	"for new planet": "new planet",
 	"for display Universe": "all",
-	"if tyou wanna exit": "Exit"
+	"if tyou wanna exit": "Exit",
+	"\n": "\n"
 }
 
 while (in_put != "Exit"):
@@ -27,3 +28,7 @@ while (in_put != "Exit"):
 			new(list_split[1])
 		elif list_split[0] == "all":
 			all()
+		else:
+			print("syntax error!!")
+	else:
+		print("syntax error!!")

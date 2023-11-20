@@ -81,6 +81,8 @@ def new(create=None):
 			Details = Detail(reader, details_Planets_id=planet.id)
 			save(Details)
 			print("Done create planet!")
+	else:
+		print("syntax error!!")
 
 def all():
 	All = {}
@@ -99,6 +101,7 @@ def get_galaxy_id(name=None):
 		for v in value:
 			if v.name == name:
 				return v.id
+	return None
 
 def get_Solar_System_id(name=None):
 	All = {}
@@ -107,6 +110,7 @@ def get_Solar_System_id(name=None):
 		for v in value:
 			if v.name == name:
 				return v.id
+	return None
 
 def get_Planet_id(name=None):
 	All = {}
@@ -115,3 +119,4 @@ def get_Planet_id(name=None):
 		for v in value:
 			if v.name == name:
 				return v.id
+	return None

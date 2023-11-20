@@ -5,6 +5,7 @@ from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planet
 from details import Detail
+from functions import new
 
 
 
@@ -20,4 +21,8 @@ comands = {
 
 while (in_put != "Exit"):
 	in_put = input(comands)
+	list_split = in_put.split()
 	print(in_put)
+	if list_split:
+		if list_split[0] == "new":
+			new(list_split[1])

@@ -131,7 +131,7 @@ def count(name=None):
 	if name == "planets":
 		All["Planets"] = db.query(Planet).all()
 	else:
-		print("syntax error!!")
+		print("syntax error!!!!")
 	for keys, value in All.items():
 		for v in value:
 			counter += 1

@@ -16,12 +16,12 @@ comands = {
 	"for new solar system": "new solar_system",
 	"for new planet": "new planet",
 	"for display Universe": "all",
-	"if tyou wanna exit": "Exit"
+	"if tyou wanna exit": "Exit",
 }
 
 while (in_put != "Exit"):
-	input_prompt = "\n".join(f"{key}: {value}" for key, value in comands.items())
-	in_put = input(input_prompt)
+	print(comands)
+	in_put = input()
 	list_split = in_put.split()
 	if list_split:
 		if list_split[0] == "new":

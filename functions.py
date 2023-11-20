@@ -120,3 +120,18 @@ def get_Planet_id(name=None):
 			if v.name == name:
 				return v.id
 	return None
+
+def count(name=None):
+	All = {}
+	counter = 0
+	if name == "galaxies":
+		All["Galaxies"] = db.query(Galaxie).all()
+	if name == "solar_systems":
+		All["Solar_Systems"] = db.query(Solar_System).all()
+	if name == "planets":
+		All["Planets"] = db.query(Planet).all()
+	else:
+		print("syntax error!!")
+	for keys, value in All.items():
+		for v in value:
+			counter += 1

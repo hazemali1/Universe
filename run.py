@@ -32,5 +32,3 @@ while (in_put != "Exit"):
 			pass
 		else:
 			print("syntax error!!")
-	else:
-		print("syntax error!!")

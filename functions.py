@@ -33,5 +33,6 @@ def new(create=None):
 			print("Done!")
 
 def all():
-	All = db.query().all()
+	All = {}
+	All["Galaxies"] = db.query(Galaxie).all()
 	print(All)

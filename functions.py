@@ -102,7 +102,7 @@ def get_galaxy_id(name=None):
 
 def get_Solar_System_id(name=None):
 	All = {}
-	All["Solar_Systems"] = db.query(Galaxie).all()
+	All["Solar_Systems"] = db.query(Solar_System).all()
 	for keys, value in All.items():
 		for v in value:
 			if v.name == name:
@@ -110,7 +110,7 @@ def get_Solar_System_id(name=None):
 
 def get_Planet_id(name=None):
 	All = {}
-	All["Planets"] = db.query(Galaxie).all()
+	All["Planets"] = db.query(Planet).all()
 	for keys, value in All.items():
 		for v in value:
 			if v.name == name:

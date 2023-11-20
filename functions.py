@@ -59,7 +59,7 @@ def new(create=None):
 	elif create == "planet":
 		name = input("what is the name of that planet? ")
 		name_of_solar_system = input("Enter the name of solar system include this planet: ")
-		solar_system_id = get_solar_system_id(name_of_solar_system)
+		solar_system_id = get_Solar_System_id(name_of_solar_system)
 		if name:
 			if solar_system_id:
 				solar_system_id = solar_system_id

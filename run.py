@@ -21,7 +21,7 @@ comands = {
 
 while (in_put != "Exit"):
 	print(comands)
-	in_put = input()
+	in_put = input(">>> ")
 	list_split = in_put.split()
 	if list_split:
 		if list_split[0] == "new":

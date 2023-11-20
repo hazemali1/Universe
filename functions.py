@@ -140,12 +140,13 @@ def count(name=None):
 
 def delete(name=None):
 	object_to_delete = None
+	Detail_to_delete = None
 	element = input("enter name of {} you wanna remove: ".format(name))
 	if name == "galaxy":
 		element_id = get_galaxy_id(element)
 		object_to_delete = db.query(Galaxie).filter_by(id=element_id).first()
 		Detail_to_delete = db.query(Detail).filter_by(details_Galaxies_id=element_id).first()
-	elif name == "solar_systems":
+	elif name == "solar_system":
 		element_id = get_Solar_System_id(element)
 		object_to_delete = db.query(Solar_System).filter_by(id=element_id).first()
 		Detail_to_delete = db.query(Detail).filter_by(details_Solar_Systems_id=element_id).first()

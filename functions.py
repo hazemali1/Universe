@@ -126,9 +126,9 @@ def count(name=None):
 	counter = 0
 	if name == "galaxies":
 		All["Galaxies"] = db.query(Galaxie).all()
-	if name == "solar_systems":
+	elif name == "solar_systems":
 		All["Solar_Systems"] = db.query(Solar_System).all()
-	if name == "planets":
+	elif name == "planets":
 		All["Planets"] = db.query(Planet).all()
 	else:
 		print(name)

@@ -19,5 +19,5 @@ comands = {
 }
 
 while (in_put != "Exit"):
-	in_put = input(srt(comands) + '\n')
+	in_put = input(comands)
 	print(in_put)

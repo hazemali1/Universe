@@ -14,17 +14,20 @@ Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 db = Session()
 
+def save(saving=None):
+	if saving:
+		db.add(saving)
+		db.commit()
+
 def new(create=None):
 	if create == "galaxy":
 		name = input("what is the name of that galaxy? ")
 		if name:
 			galaxy = Galaxie(name)
-			db.add(galaxy)
-			db.commit()
+			save(galaxy)
 			details = input("enter the file path of details: ")
 			with open(details, encoding='utf8') as f:
 				reader = f.read()
 			Details = Detail(reader, details_Galaxies_id=galaxy.id)
-			db.add(Details)
-			db.commit()
+			save(Details)
 			print("done")

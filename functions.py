@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+from sqlalchemy import create_engine, MetaData
+from sqlalchemy.orm import sessionmaker
 from galaxies import Galaxie
 from solar_systems import Solar_System
 from planets import Planet

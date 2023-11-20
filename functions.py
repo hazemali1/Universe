@@ -30,12 +30,88 @@ def new(create=None):
 				reader = f.read()
 			Details = Detail(reader, details_Galaxies_id=galaxy.id)
 			save(Details)
-			print("Done!")
+			print("Done create galaxy!")
+	elif create == "solar_system":
+		name = input("what is the name of that solar_system? ")
+		name_of_galaxy = input("Enter the name of galaxy include this solar_system: ")
+		galaxy_id = get_galaxy_id(name_of_galaxy)
+		if name:
+			if galaxy_id:
+				galaxy_id = galaxy_id
+			else:
+				print("this galaxy does not exist. do you want to create new one? (y/n)")
+				answer = input()
+				if answer == "y":
+					new("galaxy")
+					galaxy_id = get_galaxy_id(name_of_galaxy)
+				elif answer == "n":
+					return
+				else:
+					print("please enter (y/n)")
+			solar_system = Solar_System(name, galaxie_id=galaxy_id)
+			save(solar_system)
+			details = input("enter the file path of details: ")
+			with open(details, encoding='utf8') as f:
+				reader = f.read()
+			Details = Detail(reader, details_Solar_Systems_id=solar_system.id)
+			save(Details)
+			print("Done create solar system!")
+	elif create == "planet":
+		name = input("what is the name of that planet? ")
+		name_of_solar_system = input("Enter the name of solar system include this planet: ")
+		solar_system_id = get_solar_system_id(name_of_solar_system)
+		if name:
+			if solar_system_id:
+				solar_system_id = solar_system_id
+			else:
+				print("this solar system does not exist. do you want to create new one? (y/n)")
+				answer = input()
+				if answer == "y":
+					new("solar_system")
+					solar_system_id = get_solar_system_id(name_of_solar_system)
+				elif answer == "n":
+					return
+				else:
+					print("please enter (y/n)")
+			planet = Planet(name, solar_system_id=solar_system_id)
+			save(planet)
+			details = input("enter the file path of details: ")
+			with open(details, encoding='utf8') as f:
+				reader = f.read()
+			Details = Detail(reader, details_Planets_id=planet.id)
+			save(Details)
+			print("Done create planet!")
 
 def all():
 	All = {}
 	All["Galaxies"] = db.query(Galaxie).all()
+	All["Solar_Systems"] = db.query(Solar_System).all()
+	All["Planets"] = db.query(Planet).all()
 	for keys, value in All.items():
 		print(keys + ":")
 		for v in value:
 			print(" " + v.name)
+
+def get_galaxy_id(name=None):
+	All = {}
+	All["Galaxies"] = db.query(Galaxie).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.name == name:
+				return v.id
+
+def get_Solar_System_id(name=None):
+	All = {}
+	All["Solar_Systems"] = db.query(Galaxie).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.name == name:
+				return v.id
+
+def get_Planet_id(name=None):
+	All = {}
+	All["Planets"] = db.query(Galaxie).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.name == name:
+				return v.id

@@ -162,12 +162,18 @@ def delete(name=None):
 		print("syntax error!!")
 	if Planets_to_delete:
 		for ele in Planets_to_delete:
+			Details_to_delete = db.query(Detail).filter_by(details_Planets_id=ele.id).first()
+			db.delete(Details_to_delete)
 			db.delete(ele)
 	if solar_systems_to_delete:
 		for ele in solar_systems_to_delete:
 			Planets_to_delete = db.query(Planet).filter_by(solar_system_id=ele.id).all()
 			for obj in Planets_to_delete:
+				Details_to_delete = db.query(Detail).filter_by(details_Planets_id=obj.id).first()
+				db.delete(Details_to_delete)
 				db.delete(obj)
+			Details_to_delete = db.query(Detail).filter_by(details_Solar_Systems_id=ele.id).first()
+			db.delete(Details_to_delete)
 			db.delete(ele)
 	if object_to_delete and Detail_to_delete:
 		db.delete(object_to_delete)

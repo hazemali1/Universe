@@ -148,6 +148,7 @@ def delete(name=None):
 		element_id = get_Solar_System_id(element)
 		object_to_delete = db.query(Solar_System).filter_by(id=element_id).first()
 		Detail_to_delete = db.query(Detail).filter_by(details_Solar_Systems_id=element_id).first()
+		Detail_to_delete = db.query(Planet).filter_by(solar_system_id=element_id).all()
 	elif name == "planet":
 		element_id = get_Planet_id(element)
 		object_to_delete = db.query(Planet).filter_by(id=element_id).first()

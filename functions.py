@@ -34,3 +34,4 @@ def new(create=None):
 
 def all():
 	All = db.query().all()
+	print(All)

@@ -137,3 +137,25 @@ def count(name=None):
 			counter += 1
 	if counter:
 		print("number of {} => {}".format(name, counter))
+
+def delete(name=None):
+	element = input("enter name of {} you wanna remove: ".format(name))
+	if name == "galaxy":
+		element_id = get_galaxy_id(element)
+		object_to_delete = session.query(Galaxie).filter_by(id=element_id).first()
+		Detail_to_delete = session.query(Detail).filter_by(details_Galaxies_id=element_id).first()
+	elif name == "solar_systems":
+		element_id = get_Solar_System_id(element)
+		object_to_delete = session.query(Solar_System).filter_by(id=element_id).first()
+		Detail_to_delete = session.query(Detail).filter_by(details_Solar_Systems_id=element_id).first()
+	elif name == "planet":
+		element_id = get_Planet_id(element)
+		object_to_delete = session.query(Planet).filter_by(id=element_id).first()
+		Detail_to_delete = session.query(Detail).filter_by(details_Planets_id=element_id).first()
+	else:
+		print("syntax error!!")
+	if object_to_delete and Detail_to_delete:
+		db.delete(object_to_delete)
+		db.delete(Detail_to_delete)
+		db.commit()
+		print("Deleted complet!!")

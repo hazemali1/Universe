@@ -6,6 +6,7 @@ from details import Detail
 from functions import new
 from functions import all
 from functions import count
+from functions import delete
 
 
 
@@ -20,7 +21,10 @@ comands = {
 	"if tyou wanna exit": "Exit",
 	"to know number of galaxies": "count galaxies",
 	"to know number of solar systems": "count solar_systems",
-	"to know number of planets": "count planets"
+	"to know number of planets": "count planets",
+	"to delete galaxy": "delete galaxy",
+	"to delete solar system": "delete solar_system",
+	"to delete planet": "delete planet"
 }
 
 while (in_put != "Exit"):
@@ -34,6 +38,8 @@ while (in_put != "Exit"):
 			all()
 		elif list_split[0] == "count" and len(list_split) == 2:
 			count(list_split[1])
+		elif list_split[0] == "delete" and len(list_split) == 2:
+			delete(list_split[1])
 		elif list_split[0] == "Exit" and len(list_split) == 1:
 			pass
 		else:

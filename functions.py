@@ -35,4 +35,6 @@ def new(create=None):
 def all():
 	All = {}
 	All["Galaxies"] = db.query(Galaxie).all()
-	print(All["Galaxies"][0].name)
+	for keys, value in All.items():
+		for k in keys:
+			print(k)

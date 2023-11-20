@@ -141,6 +141,7 @@ def count(name=None):
 def delete(name=None):
 	object_to_delete = None
 	Detail_to_delete = None
+	Planets_to_delete = None
 	element = input("enter name of {} you wanna remove: ".format(name))
 	if name == "galaxy":
 		element_id = get_galaxy_id(element)
@@ -157,6 +158,8 @@ def delete(name=None):
 		Detail_to_delete = db.query(Detail).filter_by(details_Planets_id=element_id).first()
 	else:
 		print("syntax error!!")
+	if Planets_to_delete:
+		db.delete(Planets_to_delete)
 	if object_to_delete and Detail_to_delete:
 		db.delete(object_to_delete)
 		db.delete(Detail_to_delete)

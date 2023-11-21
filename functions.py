@@ -187,26 +187,28 @@ def show_detail(name=None):
 	obj = input("enter name of {}: ".format(name))
 	All = {}
 	get_id = None
-	det = None
 	if name == "galaxy":
 		All["Galaxies"] = db.query(Detail).all()
 		get_id = get_galaxy_id(obj)
-		det = details_Galaxies_id
 	elif name == "solar_system":
 		get_id = get_Solar_System_id(obj)
 		All["Solar_Systems"] = db.query(Detail).all()
-		det = "details_Solar_Systems_id"
 	elif name == "planet":
 		get_id = get_Planet_id(obj)
 		All["Planets"] = db.query(Detail).all()
-		det = "details_Planets_id"
 	else:
 		print("syntax error!!")
 		return
 	if get_id:
 		for keys, value in All.items():
 			for v in value:
-				if v.det == get_id:
+				if name == "galaxy":
+					det = v.details_Galaxies_id
+				if name == "solar_system":
+					det = v.details_Solar_Systems_id
+				if name == "planet":
+					det = v.details_Planets_id
+				if det == get_id:
 					print(v.details)
 	else:
 		print("not found!!")

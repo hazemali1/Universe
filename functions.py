@@ -182,3 +182,34 @@ def delete(name=None):
 		print("Deleted complet!!")
 	else:
 		print("not found!!")
+
+def show_detail(name=None):
+	obj = input("enter name of {}: ".format(name))
+	All = {}
+	get_id = None
+	det = None
+	if name == "galaxy":
+		All["Galaxies"] = db.query(Detail).all()
+		get_id = get_galaxy_id(obj)
+		det = "details_Galaxies_id"
+	elif name == "solar_system":
+		get_id = get_Solar_System_id(obj)
+		All["Solar_Systems"] = db.query(Detail).all()
+		det = "details_Solar_Systems_id"
+	elif name == "planet":
+		get_id = get_Planet_id(obj)
+		All["Planets"] = db.query(Detail).all()
+		det = "details_Planets_id"
+	else:
+		print("syntax error!!")
+		return
+	if get_id:
+		for keys, value in All.items():
+			for v in value:
+				if v.det == get_id:
+					print(v.details)
+	else:
+		print("not found!!")
+
+def update(name=None):
+	pass

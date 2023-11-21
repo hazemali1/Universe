@@ -191,7 +191,7 @@ def show_detail(name=None):
 	if name == "galaxy":
 		All["Galaxies"] = db.query(Detail).all()
 		get_id = get_galaxy_id(obj)
-		det = "details_Galaxies_id"
+		det = details_Galaxies_id
 	elif name == "solar_system":
 		get_id = get_Solar_System_id(obj)
 		All["Solar_Systems"] = db.query(Detail).all()
@@ -206,7 +206,7 @@ def show_detail(name=None):
 	if get_id:
 		for keys, value in All.items():
 			for v in value:
-				if v.details_Galaxies_id == get_id:
+				if v.det == get_id:
 					print(v.details)
 	else:
 		print("not found!!")

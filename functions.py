@@ -206,7 +206,7 @@ def show_detail(name=None):
 	if get_id:
 		for keys, value in All.items():
 			for v in value:
-				if v.attr(det) == get_id:
+				if getattr(v, "det", None) == get_id:
 					print(v.details)
 	else:
 		print("not found!!")

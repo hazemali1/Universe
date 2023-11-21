@@ -210,7 +210,7 @@ def show_detail(name=None):
 					print("hehe")
 					print(v.details)
 				else:
-					print("haha")
+					print(get_id, getattr(v, "det", None))
 	else:
 		print("not found!!")
 

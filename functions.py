@@ -207,7 +207,10 @@ def show_detail(name=None):
 		for keys, value in All.items():
 			for v in value:
 				if getattr(v, "det", None) == get_id:
+					print("hehe")
 					print(v.details)
+				else:
+					print("haha")
 	else:
 		print("not found!!")
 

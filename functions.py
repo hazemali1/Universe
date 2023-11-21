@@ -206,6 +206,7 @@ def show_detail(name=None):
 	if get_id:
 		for keys, value in All.items():
 			for v in value:
+				print(dir(v))
 				if v.obj(det) == get_id:
 					print(v.details)
 	else:

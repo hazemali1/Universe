@@ -217,13 +217,13 @@ def update(name=None):
 	element = input("enter name of {} to update: ".format(name))
 	detail_to_update = None
 	if name == "galaxy":
-		detail_id = get_galaxy_id
+		detail_id = get_galaxy_id(element)
 		detail_to_update = db.query(Detail).filter_by(details_Galaxies_id=detail_id).first()
 	elif name == "solar_system":
-		detail_id = get_Solar_System_id
+		detail_id = get_Solar_System_id(element)
 		detail_to_update = db.query(Detail).filter_by(details_Solar_Systems_id=detail_id).first()
 	elif name == "planet":
-		detail_id = get_Planet_id
+		detail_id = get_Planet_id(element)
 		detail_to_update = db.query(Detail).filter_by(details_Planets_id=detail_id).first()
 	else:
 		print("syntax error!!")

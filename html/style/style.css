@@ -532,6 +532,7 @@ h3:hover {
 .swimming * {
 	max-width: 100px;
 	z-index: -1;
+	cursor: grab;
 }
 
 @keyframes combined {

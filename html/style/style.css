@@ -1,0 +1,566 @@
+* {
+	color: white;
+}
+
+h2 {
+	display: inline-block;
+	vertical-align: text-bottom;
+	color: #e7e6f3eb;
+	transition-duration: 1s;
+	cursor: pointer;
+	letter-spacing: 1.5px;
+	line-height: 30px;
+	word-spacing: 2px;
+	font-family:'Courier New', Courier, monospace;
+}
+
+h2:hover {
+	color: white;
+}
+
+.img {
+	vertical-align: super;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: inline;
+	margin-top: 0;
+	position: relative;
+	z-index: 0;
+	margin-right: 10px;
+	cursor: pointer;
+	margin-left: 1px !important;
+	animation: combined-animation 100s linear 0s infinite normal;
+}
+
+video {
+	width: auto;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.word {
+	margin: 0;
+	margin-left: 5px;
+	background-color: #100c7743;
+	color:rgb(220, 226, 235);
+	max-width: 100px;
+	text-align: center;
+	padding: 20px;
+	border-radius: 20px;
+	transition-duration: 0.2s;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.word:hover {
+	background-color: #100c7760;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+/* .main {
+	display: none;
+} */
+
+/* .galaxies {
+	display: inline-block;
+	border: 1px solid white;
+	margin-left: 200px;
+	padding: 10px;
+}
+
+.solar_systems {
+	border-left: 3px solid white;
+	margin-left: 200px;
+	padding-left: 10px;
+	min-width: 85px;
+}
+
+.planets {
+	border-left: 3px solid white;
+	margin-left: 200px;
+	padding-left: 10px;
+} */
+
+
+
+ul.display {
+    list-style-type: none;
+    padding: 0;
+	max-width: 60%;
+	cursor: pointer;
+}
+
+ul.display li {
+    background-color: #06022c74;
+	border-radius: 12px;
+    margin: 5px;
+	margin-left: 50px;
+    padding: 10px;
+}
+
+ul.display li:hover {
+    background-color: #09044084;
+}
+
+ul.display .solar_systems {
+    margin-left: 20px;
+}
+
+ul.display .solar_systems ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.display .solar_systems ul li {
+    background-color: #08055561;
+    margin: 5px;
+    padding: 10px;
+}
+
+ul.display .solar_systems ul li:hover {
+    background-color: #181a4c89;
+}
+
+ul.display .solar_systems ul .planets {
+    margin-left: 20px;
+}
+
+ul.display .solar_systems ul .planets ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.display .solar_systems ul .planets ul li {
+    background-color: #36396f5a;
+    margin: 5px;
+    padding: 10px;
+}
+
+ul.display .solar_systems ul .planets ul li:hover {
+    background-color: #5844cb2e;
+}
+
+
+
+/* .galaxy {
+	padding: 10px;
+} */
+
+/* .display p {
+	color:lightcyan;
+	position: absolute;
+	top: 0;
+	border-left: 3px solid white;
+	padding-left: 10px;
+	margin-left: -12.5px;
+} */
+
+/* .galaxy .solar_systems,
+.display p {
+	display: none;
+} */
+
+/* .galaxy:hover .solar_systems {
+	display: block;
+} */
+
+/* .solar_system .planets {
+	display: none;
+} */
+
+/* .solar_system:hover .planets,
+.display p {
+	display: block;
+} */
+
+/* .display {
+	display: none;
+} */
+
+/* .galaxies:active .display {
+	display: block;
+} */
+
+/* .click_g .display{
+	display: block;
+}
+
+.click_s .solar_systems {
+	display: block;
+}
+
+.click_p .planets,
+.display p {
+	display: block;
+} */
+
+/* .galaxies:hover .display {
+	display: block;
+} */
+
+/* .galaxies,
+.solar_systems,
+.planets {
+} */
+
+/* .show{
+	display: none;
+} */
+
+ul, li {
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+.display {
+	display: none;
+}
+
+.solar_systems,
+.planets {
+	display: none;
+}
+
+.details * {
+	display: none;
+}
+
+.details *:not(img) {
+	position: fixed;
+	left: 40%;
+	top: 30%;
+	background-color: #1e1851b9;
+	color: #e6e5f3;
+	border-radius: 50px;
+	padding: 10px;
+	padding-left: 20px;
+	letter-spacing: 1.5px;
+	line-height: 30px;
+	word-spacing: 2px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	max-width: 500px;
+	transition-duration: 0.4s;
+}
+
+.details *:hover:not(img) {
+	background-color: #10095679;
+	padding: 15px;
+	padding-left: 25px;
+}
+
+.pics {
+	width: 500px;
+	height: 500px;
+	border-radius: 50%;
+	margin-top: 50px;
+	position: fixed;
+	left: 5px;
+	top: 20%;
+	z-index: -1;
+	animation: combined-animation 100s linear 0s infinite normal;
+	cursor: move;
+}
+
+@keyframes combined-animation {
+	0% {
+		transform: scale(1.1, 1.1) rotate(0deg);
+		margin-left: 40px;
+	}
+	25% {
+		transform: scale(1.2, 1.2) rotate(90deg);
+		margin-left: 50px;
+	}
+	50% {
+		transform: scale(1.1, 1.1) rotate(180deg);
+		margin-left: 40px;
+	}
+	75% {
+		transform: scale(1, 1) rotate(270deg);
+		margin-left: 30px;
+	}
+	100% {
+		transform: scale(0.9, 0.9) rotate(360deg);
+		margin-left: 20px;
+	}
+}
+
+
+/* .Milky_Way_details,
+.Milky_Way_details * {
+	display: block;
+} */
+
+/* .planets {
+	display: none;
+} */
+
+.displaying {
+	display: block;
+}
+
+.displayingg {
+	display: none;
+}
+
+/* .display div {
+	display: block;
+} */
+
+/* .display .Milky_Way * {
+	display: block;
+} */
+
+/* .Milky_Way, 
+.Milky_Way * {
+	display: block;
+} */
+
+.cc {
+	background-color: red;
+}
+/*--------------------------------------*/
+
+/* * {
+	color: red;
+} */
+
+/* :not(.details) {
+	display: none;
+} */
+
+
+
+/* .first {
+	display: none;
+} */
+
+.second {
+	z-index: -2;
+}
+
+.index {
+	z-index: -1;
+	/* transition-duration: 1s;
+	transition-timing-function: linear; */
+	/* transform: scale(2, 2); */
+}
+
+.displayingtr {
+	display: block;
+	animation: animation 5s linear 0s 1 normal, combined-animation 10s linear 5s infinite normal;
+}
+
+.displayingttr {
+	display: block;
+	animation: animation 5s linear 0s 1 normal;
+}
+
+.displayinggtr {
+	display: none;
+}
+
+@keyframes animation {
+	0% {
+		transform: scale(0.2, 0.2) rotate(0deg);
+		color: transparent;
+		background-color: transparent;
+	}
+	25% {
+		transform: scale(0.5, 0.5) rotate(90deg);
+		color: transparent;
+		background-color: transparent;
+		top: 40%;
+	}
+	50% {
+		transform: scale(0.7, 0.7) rotate(180deg);
+		color: transparent;
+		background-color: transparent;
+		top: 35%;
+	}
+	75% {
+		transform: scale(0.9, 0.9) rotate(270deg);
+		color: transparent;
+		background-color: transparent;
+	}
+	100% {
+		transform: scale(1, 1) rotate(360deg);
+		color: transparent;
+		background-color: transparent;
+		position: fixed;
+		left: 5%;
+		top: 15%;
+	}
+}
+
+/* 
+.details {
+	position: fixed;
+	bottom: 0;
+	color: red;
+} */
+
+
+
+
+/* .Milky_Way_details {
+	display: block;
+} */
+
+button {
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	border: 2px solid #3498db;
+	border-radius: 50px;
+	background-color: transparent;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: padding 0.5s ease, color 0.5s ease;
+	position: fixed;
+	bottom: 10%;
+	left: 75%;
+	animation: ani 0.1s linear 0s 1 normal;
+}
+
+button:hover {
+	background-color: #091c6f77;
+	color: #cfe2ff;
+	padding: 15px 30px;
+  }
+  
+@keyframes ani {
+	from {
+		position: fixed;
+		right: -100%;
+		border: 2px solid transparent;
+	}
+
+	to {
+		position: fixed;
+		right: 20%;
+		border: 2px solid #3498db1e;
+	}
+}
+
+h3 {
+	position: absolute;
+	top: 10px;
+	right:20px;
+	background-color: #1e1a4765;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+h3:hover {
+	background-color: #1e1a47a7;
+}
+
+.about {
+	background-color: rgba(16, 16, 129, 0.205);
+	letter-spacing: 1px;
+	position: fixed;
+	bottom: 0;
+	padding: 8px;
+	text-align: center;
+	line-height: 30px;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 20px;
+	width: 100%;
+	margin: 0;
+	visibility: hidden;
+}
+
+.visable {
+	visibility: visible;
+}
+
+.swimming .i1 {
+	position: fixed;
+	top: 50px;
+	animation: combined 5s linear -1s infinite reverse;
+}
+
+.swimming .i2 {
+	position: fixed;
+	top: 450px;
+	animation: combined 5s linear -2s infinite reverse;
+}
+
+.swimming .i3 {
+	position: fixed;
+	top: 150px;
+	animation: combined 5s linear -3s infinite reverse;
+}
+
+.swimming .i4 {
+	position: fixed;
+	top: 300px;
+	animation: combined 5s linear -4s infinite reverse;
+}
+
+.swimming .i5 {
+	position: fixed;
+	top: 405px;
+	animation: combined 5s linear -5s infinite reverse;
+}
+
+.swimming .i6 {
+	position: fixed;
+	top: 500px;
+	animation: combined 5s linear -6s infinite reverse;
+}
+
+.swimming .i7 {
+	position: fixed;
+	top: -100px;
+	animation: combined 5s linear -7s infinite reverse;
+}
+
+.swimming .i8 {
+	position: fixed;
+	top: 550px;
+	animation: combined 5s linear -8s infinite reverse;
+}
+
+.swimming * {
+	max-width: 100px;
+	z-index: -1;
+}
+
+@keyframes combined {
+	0% {
+		transform: scale(1.1, 1.1) rotate(0deg);
+		position: fixed;
+		left: -100%;
+		max-width: 100px;
+	}
+	25% {
+		transform: scale(1.2, 1.2) rotate(90deg);
+		position: fixed;
+		left: -50%;
+		max-width: 200px;
+	}
+	50% {
+		transform: scale(1.1, 1.1) rotate(180deg);
+		position: fixed;
+		left: 0%;
+		max-width: 300px;
+	}
+	75% {
+		transform: scale(1, 1) rotate(270deg);
+		position: fixed;
+		left: 50%;
+	}
+	100% {
+		transform: scale(0.9, 0.9) rotate(360deg);
+		position: fixed;
+		left: 100%;
+	}
+}

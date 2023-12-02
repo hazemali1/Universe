@@ -311,13 +311,13 @@ def api_details():
 		name = ""
 		if details.details_Galaxies_id:
 			print("galaxy")
-			name = get_galaxy_name(details.id)
+			name = get_galaxy_name(details.details_Galaxies_id)
 		if details.details_Solar_Systems_id:
 			print("solar system")
-			name = get_Solar_System_name(details.id)
+			name = get_Solar_System_name(details.details_Solar_Systems_id)
 		if details.details_Planets_id:
 			print("planet")
-			name = get_Planet_name(details.id)
+			name = get_Planet_name(details.details_Planets_id)
 		print(name)
 		dic['classname'] = get_classname(name)
 		dic['path_of_img'] = "info/pics/" + get_classname(name) + ".jpg"

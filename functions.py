@@ -289,6 +289,7 @@ def get_Solar_System_name(id=None):
 	for keys, value in All.items():
 		for v in value:
 			if v.id == id:
+				print("s")
 				return v.name
 	return None
 

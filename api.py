@@ -12,8 +12,7 @@ app = Flask(__name__)
 def api():
 	universe = api_universe()
 	details = api_details()
-    return render_template('index.html', universe = universe,
-										 details = details)
+	return render_template('index.html', universe=universe, details=details)
 
 
 if __name__ == "__main__":

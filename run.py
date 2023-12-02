@@ -65,6 +65,4 @@ while (in_put != "Exit"):
 		elif list_split[0] == "Exit" and len(list_split) == 1:
 			pass
 		else:
-			print(api_universe())
-			print(api_details())
 			print("syntax error!!")

@@ -314,7 +314,7 @@ def api_details():
 			name = get_Solar_System_name(details.details_Solar_Systems_id)
 		if details.details_Planets_id:
 			name = get_Planet_name(details.details_Planets_id)
-		dic['classname'] = get_classname(name)
+		dic['classname'] = get_classname(name) + "_details"
 		dic['path_of_img'] = "info/pics/" + get_classname(name) + ".jpg"
 		All.append(dic)
 	return All

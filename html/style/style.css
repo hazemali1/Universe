@@ -230,24 +230,27 @@ ul, li {
 	display: none;
 }
 
-.details *:not(img) {
+.details pre {
 	position: fixed;
 	left: 40%;
-	top: 30%;
+	top: 15%;
 	background-color: #1e1851b9;
 	color: #e6e5f3;
 	border-radius: 50px;
 	padding: 10px;
 	padding-left: 20px;
 	letter-spacing: 1.5px;
-	line-height: 30px;
 	word-spacing: 2px;
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	max-width: 500px;
+	line-height: 15px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	width: auto;
+	height: auto;
+	margin-right: 10px;
 	transition-duration: 0.4s;
+	white-space: pre-line;
 }
 
-.details *:hover:not(img) {
+.details pre:hover {
 	background-color: #10095679;
 	padding: 15px;
 	padding-left: 25px;
@@ -276,15 +279,15 @@ ul, li {
 		margin-left: 50px;
 	}
 	50% {
-		transform: scale(1.1, 1.1) rotate(180deg);
+		transform: scale(1, 1) rotate(180deg);
 		margin-left: 40px;
 	}
 	75% {
-		transform: scale(1, 1) rotate(270deg);
+		transform: scale(0.9, 0.9) rotate(270deg);
 		margin-left: 30px;
 	}
 	100% {
-		transform: scale(0.9, 0.9) rotate(360deg);
+		transform: scale(1, 1) rotate(360deg);
 		margin-left: 20px;
 	}
 }
@@ -352,7 +355,12 @@ ul, li {
 
 .displayingtr {
 	display: block;
-	animation: animation 5s linear 0s 1 normal, combined-animation 10s linear 5s infinite normal;
+	animation: animation 5s linear 0s 1 normal, combined-animation 100s linear 5s infinite normal;
+}
+
+.displayingcon {
+	display: block;
+	animation: animation 5s linear 0s 1 normal;
 }
 
 .displayingttr {
@@ -369,31 +377,41 @@ ul, li {
 		transform: scale(0.2, 0.2) rotate(0deg);
 		color: transparent;
 		background-color: transparent;
+		position: fixed;
+		right: 50%;
+		bottom: 30%;
 	}
 	25% {
 		transform: scale(0.5, 0.5) rotate(90deg);
 		color: transparent;
 		background-color: transparent;
-		top: 40%;
+		position: fixed;
+		bottom: 33%;
+		right: 52%;
 	}
 	50% {
 		transform: scale(0.7, 0.7) rotate(180deg);
 		color: transparent;
 		background-color: transparent;
-		top: 35%;
+		position: fixed;
+		bottom: 35%;
+		right: 65%;
 	}
 	75% {
 		transform: scale(0.9, 0.9) rotate(270deg);
 		color: transparent;
 		background-color: transparent;
+		position: fixed;
+		bottom: 40%;
+		right: 90%;
 	}
 	100% {
 		transform: scale(1, 1) rotate(360deg);
 		color: transparent;
 		background-color: transparent;
 		position: fixed;
-		left: 5%;
-		top: 15%;
+		bottom: 70%;
+		right: 95%;
 	}
 }
 

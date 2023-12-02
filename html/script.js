@@ -76,15 +76,18 @@ ps.addEventListener('click', function(event) {
 		
 		// var zzs = "." + String(xxs) + ' *';
 		var dds = "." + String(xxs) + "_details";
-		var dddd = "." + String(xxs) + "_details" + " *";
+		var dddd = "." + String(xxs) + "_details" + " img";
+		var ddddd = "." + String(xxs) + "_details" + " pre";
 		// console.log(zzs);
 		// console.log(dds);
 		// var vvs = document.querySelector(zzs);
 		var ddds = document.querySelector(dds);
 		var dddds = document.querySelector(dddd);
+		var ddddds = document.querySelector(ddddd);
 		// console.log(ddds);
 		ddds.classList.toggle('displayingttr');
 		dddds.classList.toggle('displayingtr');
+		ddddds.classList.toggle('displayingcon');
 		cc.classList.toggle('displayinggtr');
 		ccc.classList.toggle('displayinggtr');
 		ii.classList.toggle('displayingg');

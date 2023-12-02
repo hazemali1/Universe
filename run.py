@@ -9,6 +9,8 @@ from functions import count
 from functions import delete
 from functions import show_detail
 from functions import update
+from functions import api_universe
+from functions import api_details
 
 
 
@@ -20,7 +22,7 @@ comands = {
 	"for new solar system": "new solar_system",
 	"for new planet": "new planet",
 	"for display Universe": "all",
-	"if tyou wanna exit": "Exit",
+	"if you wanna exit": "Exit",
 	"to know number of galaxies": "count galaxies",
 	"to know number of solar systems": "count solar_systems",
 	"to know number of planets": "count planets",
@@ -63,4 +65,6 @@ while (in_put != "Exit"):
 		elif list_split[0] == "Exit" and len(list_split) == 1:
 			pass
 		else:
+			print(api_universe())
+			print(api_details())
 			print("syntax error!!")

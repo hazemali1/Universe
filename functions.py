@@ -236,3 +236,85 @@ def update(name=None):
 		print("success!!")
 	else:
 		print("not found!!")
+
+def get_classname(element):
+	class_name = ""
+	for i in range(len(element)):
+		if i == ' ':
+			class_name[i] = '_'
+		else:
+			class_name[i] = element[i]
+	if class_name[0].isdigit():
+		class_name = "_" + class_name
+	return class_name
+
+def api_universe():
+	All = []
+	All_Galaxies = db.query(Galaxie).all()
+	All_Solar_Systems = db.query(Solar_System).all()
+	All_Planets = db.query(Planet).all()
+	for g in All_Galaxies:
+		dic = {}
+		dic['galaxy'] = g.name
+		dic['galaxy_classname'] = get_classname(g.name)
+		dic['solar_systems'] = []
+		for s in All_Solar_Systems:
+			dic_solar_system = {}
+			if s.galaxie_id == g.id:
+				dic_solar_system['solar_system'] = s.name
+				dic_solar_system['solar_system_classname'] = get_classname(s.name)
+				dic_solar_system['planets'] = []
+				for p in All_Planets:
+					dic_planet = {}
+					if p.solar_system_id == s.id:
+						dic_planet['planet'] = p.name
+						dic_planet['planet_classname'] = get_classname(p.name)
+						dic_solar_system['planets'].append(dic_planet)
+				dic['solar_systems'].append(dic_solar_system)
+		All.append(dic)
+	return All
+
+def get_galaxy_name(id=None):
+	All = {}
+	All["Galaxies"] = db.query(Galaxie).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.id == id:
+				return v.name
+	return None
+
+def get_Solar_System_name(id=None):
+	All = {}
+	All["Solar_Systems"] = db.query(Solar_System).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.id == id:
+				return v.name
+	return None
+
+def get_Planet_name(id=None):
+	All = {}
+	All["Planets"] = db.query(Planet).all()
+	for keys, value in All.items():
+		for v in value:
+			if v.id == id:
+				return v.name
+	return None
+
+def api_details():
+	All = []
+	All_Details = db.query(Detail).all()
+	for details in All_Details:
+		dic = {}
+		dic['details'] = details.details
+		name = ""
+		if details.details_Galaxies_id:
+			name = get_galaxy_name(details.id)
+		if details.details_Solar_Systems_id:
+			name = get_Solar_System_name(details.id)
+		if details.details_Planets_id:
+			name = get_Planet_name(details.id)
+		dic['classname'] = get_classname(name)
+		dic['path_of_img'] = "info/pics/" + get_classname(name) + ".jpg"
+		All.append(dic)
+	return All

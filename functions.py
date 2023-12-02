@@ -288,8 +288,8 @@ def get_Solar_System_name(id=None):
 	All["Solar_Systems"] = db.query(Solar_System).all()
 	for keys, value in All.items():
 		for v in value:
+			print("s")
 			if v.id == id:
-				print("s")
 				return v.name
 	return None
 

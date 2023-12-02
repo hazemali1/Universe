@@ -238,7 +238,7 @@ def update(name=None):
 		print("not found!!")
 
 def get_classname(element):
-	class_name = ""
+	class_name = []
 	for i in range(len(element)):
 		if i == ' ':
 			class_name[i] = '_'
@@ -246,7 +246,7 @@ def get_classname(element):
 			class_name[i] = element[i]
 	if class_name[0].isdigit():
 		class_name = "_" + class_name
-	return class_name
+	return str(class_name)
 
 def api_universe():
 	All = []

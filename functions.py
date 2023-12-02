@@ -317,6 +317,7 @@ def api_details():
 		if details.details_Planets_id:
 			print("planet")
 			name = get_Planet_name(details.id)
+		print(name)
 		dic['classname'] = get_classname(name)
 		dic['path_of_img'] = "info/pics/" + get_classname(name) + ".jpg"
 		All.append(dic)

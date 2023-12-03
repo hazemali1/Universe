@@ -9,7 +9,7 @@ from details import Detail
 from db import Base
 
 
-engine = create_engine("mysql+mysqlclient://root:root@localhost/db_test")
+engine = create_engine("mysql+mysqldb://root:root@localhost/db_test")
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 db = Session()

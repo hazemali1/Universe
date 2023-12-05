@@ -62,32 +62,6 @@ video {
 	padding-right: 25px;
 }
 
-/* .main {
-	display: none;
-} */
-
-/* .galaxies {
-	display: inline-block;
-	border: 1px solid white;
-	margin-left: 200px;
-	padding: 10px;
-}
-
-.solar_systems {
-	border-left: 3px solid white;
-	margin-left: 200px;
-	padding-left: 10px;
-	min-width: 85px;
-}
-
-.planets {
-	border-left: 3px solid white;
-	margin-left: 200px;
-	padding-left: 10px;
-} */
-
-
-
 ul.display {
     list-style-type: none;
     padding: 0;
@@ -144,73 +118,6 @@ ul.display .solar_systems ul .planets ul li {
 ul.display .solar_systems ul .planets ul li:hover {
     background-color: #5844cb2e;
 }
-
-
-
-/* .galaxy {
-	padding: 10px;
-} */
-
-/* .display p {
-	color:lightcyan;
-	position: absolute;
-	top: 0;
-	border-left: 3px solid white;
-	padding-left: 10px;
-	margin-left: -12.5px;
-} */
-
-/* .galaxy .solar_systems,
-.display p {
-	display: none;
-} */
-
-/* .galaxy:hover .solar_systems {
-	display: block;
-} */
-
-/* .solar_system .planets {
-	display: none;
-} */
-
-/* .solar_system:hover .planets,
-.display p {
-	display: block;
-} */
-
-/* .display {
-	display: none;
-} */
-
-/* .galaxies:active .display {
-	display: block;
-} */
-
-/* .click_g .display{
-	display: block;
-}
-
-.click_s .solar_systems {
-	display: block;
-}
-
-.click_p .planets,
-.display p {
-	display: block;
-} */
-
-/* .galaxies:hover .display {
-	display: block;
-} */
-
-/* .galaxies,
-.solar_systems,
-.planets {
-} */
-
-/* .show{
-	display: none;
-} */
 
 ul, li {
 	list-style-type: none;
@@ -292,16 +199,6 @@ ul, li {
 	}
 }
 
-
-/* .Milky_Way_details,
-.Milky_Way_details * {
-	display: block;
-} */
-
-/* .planets {
-	display: none;
-} */
-
 .displaying {
 	display: block;
 }
@@ -310,37 +207,9 @@ ul, li {
 	display: none;
 }
 
-/* .display div {
-	display: block;
-} */
-
-/* .display .Milky_Way * {
-	display: block;
-} */
-
-/* .Milky_Way, 
-.Milky_Way * {
-	display: block;
-} */
-
 .cc {
 	background-color: red;
 }
-/*--------------------------------------*/
-
-/* * {
-	color: red;
-} */
-
-/* :not(.details) {
-	display: none;
-} */
-
-
-
-/* .first {
-	display: none;
-} */
 
 .second {
 	z-index: -2;
@@ -348,9 +217,6 @@ ul, li {
 
 .index {
 	z-index: -1;
-	/* transition-duration: 1s;
-	transition-timing-function: linear; */
-	/* transform: scale(2, 2); */
 }
 
 .displayingtr {
@@ -414,20 +280,6 @@ ul, li {
 		right: 95%;
 	}
 }
-
-/* 
-.details {
-	position: fixed;
-	bottom: 0;
-	color: red;
-} */
-
-
-
-
-/* .Milky_Way_details {
-	display: block;
-} */
 
 button {
 	padding: 10px 20px;

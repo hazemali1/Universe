@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from db import Base
 
 
+"""galaxy class for handling sqlalchemy galaxies objects"""
 class Galaxie(Base):
 	__tablename__ = "Galaxies"
 	id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
@@ -12,4 +13,5 @@ class Galaxie(Base):
 	details = relationship("Detail")
 
 	def __init__(self, name):
+		"""initialize the Galaxy class"""
 		self.name = name

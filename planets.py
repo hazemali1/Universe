@@ -3,6 +3,8 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from db import Base
 
+
+"""planets class for handling class table"""
 class Planet(Base):
 	__tablename__ = "Planets"
 	id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
@@ -11,5 +13,6 @@ class Planet(Base):
 	details = relationship("Detail")
 
 	def __init__(self, name, solar_system_id):
+		"""initialize the planet class"""
 		self.name = name
 		self.solar_system_id = solar_system_id

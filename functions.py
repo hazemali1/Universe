@@ -6,20 +6,24 @@ from solar_systems import Solar_System
 from planets import Planet
 from details import Detail
 
+
 from db import Base
 
 
+"""conect into database"""
 engine = create_engine("mysql+mysqldb://root:betty@localhost/db_test")
 Base.metadata.create_all(bind=engine)
 Session = sessionmaker(bind=engine)
 db = Session()
 
 def save(saving=None):
+	"""saving to my database"""
 	if saving:
 		db.add(saving)
 		db.commit()
 
 def new(create=None):
+	"""function to create a new element in the database"""
 	if create == "galaxy":
 		name = input("what is the name of that galaxy? ")
 		if name:
@@ -85,6 +89,7 @@ def new(create=None):
 		print("syntax error!!")
 
 def all():
+	"""function to print my Universe"""
 	All = {}
 	All["Galaxies"] = db.query(Galaxie).all()
 	All["Solar_Systems"] = db.query(Solar_System).all()
@@ -95,6 +100,7 @@ def all():
 			print(" " + v.name)
 
 def get_galaxy_id(name=None):
+	"""function to get id galaxy from name"""
 	All = {}
 	All["Galaxies"] = db.query(Galaxie).all()
 	for keys, value in All.items():
@@ -104,6 +110,7 @@ def get_galaxy_id(name=None):
 	return None
 
 def get_Solar_System_id(name=None):
+	"""function to get id solar system from name"""
 	All = {}
 	All["Solar_Systems"] = db.query(Solar_System).all()
 	for keys, value in All.items():
@@ -113,6 +120,7 @@ def get_Solar_System_id(name=None):
 	return None
 
 def get_Planet_id(name=None):
+	"""function to get id planet from name"""
 	All = {}
 	All["Planets"] = db.query(Planet).all()
 	for keys, value in All.items():
@@ -122,6 +130,7 @@ def get_Planet_id(name=None):
 	return None
 
 def count(name=None):
+	"""function to count galaxies or solar systems or planets"""
 	All = {}
 	counter = 0
 	if name == "galaxies":
@@ -139,6 +148,7 @@ def count(name=None):
 		print("number of {} => {}".format(name, counter))
 
 def delete(name=None):
+	"""delete an element from the database"""
 	object_to_delete = None
 	Detail_to_delete = None
 	Planets_to_delete = None
@@ -184,6 +194,7 @@ def delete(name=None):
 		print("not found!!")
 
 def show_detail(name=None):
+	"""read details about galaxy or solar system or planet"""
 	obj = input("enter name of {}: ".format(name))
 	All = {}
 	get_id = None
@@ -214,6 +225,7 @@ def show_detail(name=None):
 		print("not found!!")
 
 def update(name=None):
+	"""update some data of element"""
 	element = input("enter name of {} to update: ".format(name))
 	detail_to_update = None
 	if name == "galaxy":
@@ -238,6 +250,7 @@ def update(name=None):
 		print("not found!!")
 
 def get_classname(element):
+	"""function to make classname to use in html"""
 	class_name = ""
 	for i in element:
 		if i == ' ':
@@ -249,6 +262,7 @@ def get_classname(element):
 	return class_name
 
 def api_universe():
+	"""function to return dict about universe to i can use it in html"""
 	All = []
 	All_Galaxies = db.query(Galaxie).all()
 	All_Solar_Systems = db.query(Solar_System).all()
@@ -275,6 +289,7 @@ def api_universe():
 	return All
 
 def get_galaxy_name(id=None):
+	"""get galaxy name from id"""
 	All = {}
 	All["Galaxies"] = db.query(Galaxie).all()
 	for keys, value in All.items():
@@ -284,6 +299,7 @@ def get_galaxy_name(id=None):
 	return None
 
 def get_Solar_System_name(id=None):
+	"""get solar system name from id"""
 	All = {}
 	All["Solar_Systems"] = db.query(Solar_System).all()
 	for keys, value in All.items():
@@ -293,6 +309,7 @@ def get_Solar_System_name(id=None):
 	return None
 
 def get_Planet_name(id=None):
+	"""get planet name from id"""
 	All = {}
 	All["Planets"] = db.query(Planet).all()
 	for keys, value in All.items():
@@ -302,6 +319,7 @@ def get_Planet_name(id=None):
 	return None
 
 def api_details():
+	"""function to return dict about details to i can use it in html"""
 	All = []
 	All_Details = db.query(Detail).all()
 	for details in All_Details:

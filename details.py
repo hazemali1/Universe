@@ -3,6 +3,8 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from db import Base
 
+
+"""class details for sqlalchemy to handle details about universe"""
 class Detail(Base):
 	__tablename__ = "Details"
 	details = Column(String(4069), nullable=False)
@@ -12,6 +14,7 @@ class Detail(Base):
 	details_Planets_id = Column(Integer, ForeignKey("Planets.id"))
 
 	def __init__(self, details, **kwargs):
+		"""initialize detail class"""
 		self.details = details
 		for k, v in kwargs.items():
 			if k == "details_Galaxies_id":

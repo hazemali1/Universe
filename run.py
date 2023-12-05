@@ -13,10 +13,11 @@ from functions import api_universe
 from functions import api_details
 
 
-
-
+"""the file to run my backend project"""
 
 in_put = ""
+
+"""this is some commands to run my backend"""
 comands = {
 	"for new galaxy": "new galaxy",
 	"for new solar system": "new solar_system",
@@ -37,6 +38,7 @@ comands = {
 	"to update planet": "update planet"
 }
 
+"""this is while loop that reads from input and run functions"""
 while (in_put != "Exit"):
 	print(comands)
 	in_put = input(">>> ")
